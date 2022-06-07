@@ -1,0 +1,24 @@
+<nav
+  class="navbar navbar-expand-lg bg-mustard nav-height sticky-top text-center text-dark"
+>
+  <p class="mx-auto text-danger text-center">
+    <i class="fas fa-truck fa-2x text-danger pr-10"></i>Enjoy free delivery on
+    all orders above $500 within Miami & California!
+  </p>
+</nav>
+
+<h3 class="p-4 text-danger">Dear Customer, here is your cart</h3>
+<div class="product-box" *ngFor="let cartItem of cartItems">
+   
+<img class="product-size" src="{{cartItem.img}}" alt="">
+<button class="btn" type="button" (click)="inc(cartItem)" ><i class="fas fa-plus"></i></button>
+<span>{{cartItem.quantity}}</span>
+
+<button class="btn" type="button" (click)="dec(cartItem)" ><i class="fas fa-minus"></i></button>
+<p>$ {{cartItem.price  * cartItem.quantity}} </p>
+<i (click)="removeCart(cartItem)" class="fas fa-trash-alt fa-2x text-danger"></i>
+
+</div>
+<div class="">
+    <p class="font-medium text-danger">Thank you for shopping with E-Pivo!</p>
+</div>
